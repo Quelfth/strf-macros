@@ -1,0 +1,17 @@
+lib.proc-macro = true
+
+[package]
+name = "strf-macros"
+version = "0.1.0"
+authors = "Quelfth"
+edition = "2024"
+description = "Procedural macros for the strf crate"
+repository = "https://github.com/Quelfth/strf-macros"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+proc-macro-crate = "3.3.0"
+proc-macro2 = "1.0.95"
+quote = "1.0.40"
+syn = {version="2.0.104", features = ["full"]}
+tap = "1.0.1"
