@@ -2,7 +2,7 @@ lib.proc-macro = true
 
 [package]
 name = "strf-macros"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Quelfth"]
 edition = "2024"
 description = "Procedural macros for the strf crate"
