@@ -7,6 +7,7 @@ struct FormattedString {
     elements: Vec<FormattedElement>,
 }
 
+#[allow(clippy::large_enum_variant)]
 enum FormattedElement {
     Str(LitStr),
     Expr(FormattedExpr),
@@ -222,8 +223,11 @@ impl Parse for FormattedString {
         
         while !input.is_empty() {
             let elt: FormattedElement = input.parse()?;
-            
             elts.push(elt);
+
+            if input.peek(Token![,]) {
+                input.parse::<Token![,]>()?;
+            }
         }
         
         Ok(Self { elements: elts })
